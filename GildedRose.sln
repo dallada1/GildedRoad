@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseInn", "ClassLibrary1\GildedRoseInn.csproj", "{800D996E-6DCE-457B-9119-9198CCC76A79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose", "ClassLibrary1\GildedRose.csproj", "{800D996E-6DCE-457B-9119-9198CCC76A79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseTests", "UnitTestProject1\GildedRoseTests.csproj", "{216AB81B-5E80-43F0-A587-9293B688272D}"
 EndProject
