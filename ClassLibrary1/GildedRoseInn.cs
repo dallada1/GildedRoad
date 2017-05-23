@@ -4,7 +4,7 @@ namespace GildedRose
 {
     public class GildedRoseInn
     {
-        public IList<Item> Items { get; set; }
+        public List<Item> Items { get; set; }
 
         public void UpdateQuality()
         {
