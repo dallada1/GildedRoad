@@ -7,8 +7,10 @@ namespace GildedRose
         private const Int32 ElevenDays = 11;
         private const Int32 SixDays = 6;
 
-        public BackstagePass(String Name, Int32 SellIn, Int32 Quailty) : base(Name, SellIn, Quailty)
-        { }
+        public BackstagePass(Int32 SellIn, Int32 Quailty) : base(SellIn, Quailty)
+        {
+            this.Name = "Backstage passes to a TAFKAL80ETC concert";
+        }
 
         public override void Update()
         {

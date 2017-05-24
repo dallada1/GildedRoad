@@ -4,8 +4,10 @@ namespace GildedRose
 {
     public class AgedBrie : Item
     {
-        public AgedBrie(String Name, Int32 SellIn, Int32 Quailty) : base(Name, SellIn, Quailty)
-        { }
+        public AgedBrie(Int32 SellIn, Int32 Quailty) : base(SellIn, Quailty)
+        {
+            this.Name = "Aged Brie";
+        }
 
         public override void Update()
         {

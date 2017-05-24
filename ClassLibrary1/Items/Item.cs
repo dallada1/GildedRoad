@@ -4,13 +4,14 @@ namespace GildedRose
 {
     public abstract class Item
     {
+        private const Int32 MaxQuality = 50;
+        private const Int32 MinQuality = 0;
         public String Name { get; protected set; }
         public Int32 SellIn { get; protected set; }
         public Int32 Quality { get; protected set; }
 
-        public Item(String Name, Int32 SellIn, Int32 Quailty)
+        public Item(Int32 SellIn, Int32 Quality)
         {
-            this.Name = Name;
             this.SellIn = SellIn;
             this.Quality = Quality;
         }
@@ -19,7 +20,7 @@ namespace GildedRose
 
         protected Boolean IsLessThanMaxQuality()
         {
-            return (Quality < 50);
+            return (Quality < MaxQuality);
         }
 
         protected void IncrementGenericItemQuality()
@@ -30,13 +31,13 @@ namespace GildedRose
 
         protected void DecreaseQuality()
         {
-            if (Quality > 0)
+            if (Quality > MinQuality)
                 Quality--;
         }
 
         protected void IncreaseQuality()
         {
-            if (Quality > 0)
+            if (Quality > MinQuality)
                 Quality++;
         }
 
@@ -44,7 +45,5 @@ namespace GildedRose
         {
             SellIn--;
         }
-
-       
     }
 }
