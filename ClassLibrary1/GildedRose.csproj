@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgedBrie.cs" />
+    <Compile Include="BattleAxe.cs" />
+    <Compile Include="BackstagePass.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="ItemNames.cs" />
     <Compile Include="GildedRoseInn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sulfuras.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

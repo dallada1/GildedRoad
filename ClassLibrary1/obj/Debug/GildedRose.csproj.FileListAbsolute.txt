@@ -2,3 +2,4 @@ D:\dev\GildedRoad\ClassLibrary1\bin\Debug\GildedRose.dll
 D:\dev\GildedRoad\ClassLibrary1\bin\Debug\GildedRose.pdb
 D:\dev\GildedRoad\ClassLibrary1\obj\Debug\GildedRose.dll
 D:\dev\GildedRoad\ClassLibrary1\obj\Debug\GildedRose.pdb
+D:\dev\GildedRoad\ClassLibrary1\obj\Debug\GildedRose.csprojResolveAssemblyReference.cache

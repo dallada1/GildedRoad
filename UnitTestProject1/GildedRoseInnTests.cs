@@ -20,7 +20,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void NonSpecialItemDecrementsOneQualityAfterOneDay()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.GenericItem, 50, 50) });
+            UpdateGildedRoseInventory(new List<Item> { new BattleAxe(ItemNames.GenericItem, 50, 50) });
 
             var updatedItem = GetItemByName(ItemNames.GenericItem);
 
@@ -31,7 +31,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void NonSpecialItemDecrementsTwoQualityAfterSellByDate()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.GenericItem, 0, 50) });
+            UpdateGildedRoseInventory(new List<Item> { new BattleAxe(ItemNames.GenericItem, 0, 50) });
 
             var updatedItem = GetItemByName(ItemNames.GenericItem);
 
@@ -42,7 +42,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void NonSpecialItemDoesNotDecrementQualityBelowZero()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.GenericItem, 50, 0) });
+            UpdateGildedRoseInventory(new List<Item> { new BattleAxe(ItemNames.GenericItem, 50, 0) });
 
             var updatedItem = GetItemByName(ItemNames.GenericItem);
 
@@ -54,7 +54,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void AgedBrieIncrementPlusOneAfterOneDay()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.AgedBrie, 50, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new AgedBrie(ItemNames.AgedBrie, 50, 10) });
 
             var updatedItem = GetItemByName(ItemNames.AgedBrie);
 
@@ -65,7 +65,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void AgedBrieIncreasesTwiceAsFastAfterSellByIsLessThanZero()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.AgedBrie, 0, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new AgedBrie(ItemNames.AgedBrie, 0, 10) });
 
             var updatedItem = GetItemByName(ItemNames.AgedBrie);
 
@@ -76,7 +76,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void AgedBrieQualityCannotExceedFifty()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.AgedBrie, 50, 50) });
+            UpdateGildedRoseInventory(new List<Item> { new AgedBrie(ItemNames.AgedBrie, 50, 50) });
 
             var updatedItem = GetItemByName(ItemNames.AgedBrie);
 
@@ -87,7 +87,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void AgedBrieDoesNotDecreaseByTwoUnderTen()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.AgedBrie, 9, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new AgedBrie(ItemNames.AgedBrie, 9, 10) });
 
             var updatedItem = GetItemByName(ItemNames.AgedBrie);
 
@@ -98,7 +98,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void SulfurasDoesNotDecrementQualityOrSellInDate()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.Sulfuras, 50, 80) });
+            UpdateGildedRoseInventory(new List<Item> { new Sulfuras(ItemNames.Sulfuras, 50, 80) });
 
             var updatedItem = GetItemByName(ItemNames.Sulfuras);
 
@@ -109,7 +109,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void BackstagePassesIncreaseQualityByOneWhenSellByDateIsGreaterThanTenDays()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.BackstagePass, 50, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new BackstagePass(ItemNames.BackstagePass, 50, 10) });
 
             var updatedItem = GetItemByName(ItemNames.BackstagePass);
 
@@ -120,7 +120,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void BackstagePassesIncreaseQualityByTwoWhenSellByDateIsBetweenTenAndSixInclusively()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.BackstagePass, 10, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new BackstagePass(ItemNames.BackstagePass, 10, 10) });
 
             var updatedItem = GetItemByName(ItemNames.BackstagePass);
 
@@ -131,7 +131,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void BackstagePassesIncreaseQualityByThreeWhenSellByDateIsBetweenFiveAndZeroInclusively()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.BackstagePass, 5, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new BackstagePass(ItemNames.BackstagePass, 5, 10) });
 
             var updatedItem = GetItemByName(ItemNames.BackstagePass);
 
@@ -142,7 +142,7 @@ namespace GildedRoseTests
         [TestMethod]
         public void BackstagePassesQualityBecomesZeroAfterSellInIsLessThanZero()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.BackstagePass, -1, 10) });
+            UpdateGildedRoseInventory(new List<Item> { new BackstagePass(ItemNames.BackstagePass, -1, 10) });
 
             var updatedItem = GetItemByName(ItemNames.BackstagePass);
 
@@ -155,9 +155,9 @@ namespace GildedRoseTests
         {
             UpdateGildedRoseInventory(new List<Item>
             {
-                CreateNewItem(ItemNames.BackstagePass, 20, 15),
-                CreateNewItem(ItemNames.GenericItem, 50, 10),
-                CreateNewItem(ItemNames.AgedBrie, 40, 30)
+                new BackstagePass(ItemNames.BackstagePass, 20, 15),
+                new BattleAxe(ItemNames.GenericItem, 50, 10),
+                new AgedBrie(ItemNames.AgedBrie, 40, 30)
             });
 
             var backstagePass = GetItemByName(ItemNames.BackstagePass);
@@ -177,22 +177,12 @@ namespace GildedRoseTests
         [TestMethod]
         public void MultipleUpdatesForASingleItem()
         {
-            UpdateGildedRoseInventory(new List<Item> { CreateNewItem(ItemNames.GenericItem, 40, 10) }, 2);
+            UpdateGildedRoseInventory(new List<Item> { new BattleAxe(ItemNames.GenericItem, 40, 10) }, 2);
 
             var updatedItem = GetItemByName(ItemNames.GenericItem);
 
             Assert.AreEqual(38, updatedItem.SellIn);
             Assert.AreEqual(8, updatedItem.Quality);
-        }
-
-        private Item CreateNewItem(String itemName, Int32 sellIn, Int32 quality)
-        {
-            var item = new Item();
-            item.Name = itemName;
-            item.SellIn = sellIn;
-            item.Quality = quality;
-
-            return item;
         }
 
         private Item GetItemByName(String itemName)
